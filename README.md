@@ -20,7 +20,7 @@ composer require orkhanahmadov/eloquent-enum-cast
 
 ## Usage
 
-Imagine you have following Enum class using [myclabs/php-enum](https://github.com/myclabs/php-enum).
+Let's say you have following Enum class using [myclabs/php-enum](https://github.com/myclabs/php-enum).
 
 ```php
 namespace App\Enums;
