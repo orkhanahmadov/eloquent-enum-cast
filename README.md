@@ -6,10 +6,6 @@
 
 Simple Enum cast for Eloquent ORM using [myclabs/php-enum](https://github.com/myclabs/php-enum).
 
-## TODO
-
-- Tests
-
 ## Installation
 
 You can install the package via composer:
