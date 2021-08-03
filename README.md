@@ -34,7 +34,7 @@ class Role extends Enum
 }
 ```
 
-To make it Eloquent castable instead of `MyCLabs\Enum\Enum` extended from `Orkhanahmadov\EloquentEnumCast\EnumCast`
+To make it Eloquent castable, instead of `MyCLabs\Enum\Enum`, extend from `Orkhanahmadov\EloquentEnumCast\EnumCast`
 
 ```php
 namespace App\Enums;
