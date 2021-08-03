@@ -1,5 +1,3 @@
-# WIP
-
 # Enum cast for Eloquent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/orkhanahmadov/eloquent-enum-cast.svg?style=flat-square)](https://packagist.org/packages/orkhanahmadov/eloquent-enum-cast)
@@ -7,6 +5,10 @@
 ![GitHub Actions](https://github.com/orkhanahmadov/eloquent-enum-cast/actions/workflows/main.yml/badge.svg)
 
 Simple Enum cast for Eloquent ORM using [myclabs/php-enum](https://github.com/myclabs/php-enum).
+
+## TODO
+
+- Tests
 
 ## Installation
 
