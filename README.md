@@ -89,6 +89,7 @@ If you discover any security related issues, please email hi@orkhan.dev instead 
 ## Credits
 
 -   [Orkhan Ahmadov](https://github.com/orkhanahmadov)
+-   [Michael Thaller](https://github.com/mThallerWeb)
 -   [All Contributors](../../contributors)
 
 ## License
