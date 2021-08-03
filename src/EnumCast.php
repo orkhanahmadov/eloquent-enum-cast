@@ -27,9 +27,9 @@ abstract class EnumCast extends Enum implements Castable
 
             public function set($model, $key, $value, $attributes)
             {
-                if (!$value instanceof Enum) {
+                if (! $value instanceof EnumCast) {
                     throw new Exception(
-                        "{$key} must be instance of Enum"
+                        "{$key} must be instance of \"Orkhanahmadov\EloquentEnumCast\EnumCast\""
                     );
                 }
 
