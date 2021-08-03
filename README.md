@@ -50,7 +50,7 @@ class Role extends EnumCast
 
 > Note: `Orkhanahmadov\EloquentEnumCast\EnumCast` extends `MyCLabs\Enum\Enum`, you can still use any other methods and properties that it has.
 
-Last thing, in your Eloquent model cast attribute using your Enum class
+Finally, in your Eloquent model cast attribute using your Enum class
 
 ```php
 use App\Enums\Role;
