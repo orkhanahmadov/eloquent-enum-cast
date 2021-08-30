@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Orchestra\Testbench\TestCase;
 use Orkhanahmadov\EloquentEnumCast\EnumCast;
+use UnexpectedValueException;
 
 class EnumCastTest extends TestCase
 {
@@ -28,6 +29,25 @@ class EnumCastTest extends TestCase
 
         $this->assertCount(1, TestModel::get());
         $this->assertSame('value1', DB::table('test_models')->first()->enum);
+    }
+
+    public function testWhenSavingAndPassingRawValueInsteadOfEnumItWillCastItGetTheValueEnum(): void
+    {
+        $model = new TestModel();
+        $model->enum = 'value1';
+        $model->save();
+
+        $this->assertCount(1, TestModel::get());
+        $this->assertSame('value1', DB::table('test_models')->first()->enum);
+    }
+
+    public function testThrowsExceptionWhenInvalidRawValueIsPassed(): void
+    {
+        $this->expectException(UnexpectedValueException::class);
+
+        $model = new TestModel();
+        $model->enum = 'invalid-value';
+        $model->save();
     }
 
     protected function setUp(): void

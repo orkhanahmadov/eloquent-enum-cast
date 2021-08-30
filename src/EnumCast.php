@@ -26,9 +26,23 @@ abstract class EnumCast extends Enum implements Castable
                 return $enum::from($value);
             }
 
+            /**
+             * @param  \Illuminate\Database\Eloquent\Model  $model
+             * @param  string  $key
+             * @param  array  $value
+             * @param  array  $attributes
+             */
             public function set($model, $key, $value, $attributes)
             {
-                return $value->getValue();
+                $enum = $model->getCasts()[$key];
+
+                if ($value instanceof $enum) {
+                    return $value->getValue();
+                }
+
+                $enum::assertValidValue($value);
+
+                return $value;
             }
         };
     }
