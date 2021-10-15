@@ -86,7 +86,7 @@ class TestModel extends Model
 
 class NonStrictTestEnum extends EnumCast
 {
-    protected const STRICT_MODE = false;
+    protected static $strictMode = false;
     private const KEY1 = 1;
 }
 

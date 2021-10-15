@@ -10,7 +10,7 @@ use MyCLabs\Enum\Enum;
 
 abstract class EnumCast extends Enum implements Castable
 {
-    protected const STRICT_MODE = true;
+    protected static $strictMode = true;
 
     public static function castUsing(array $arguments)
     {
@@ -60,7 +60,7 @@ abstract class EnumCast extends Enum implements Castable
      */
     public static function search($value)
     {
-        return \array_search($value, static::toArray(), static::STRICT_MODE);
+        return \array_search($value, static::toArray(), static::$strictMode);
     }
 }
 

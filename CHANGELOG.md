@@ -2,9 +2,9 @@
 
 All notable changes to `eloquent-enum-cast` will be documented in this file
 
-## 1.2.0 - 2021-10-15
+## 1.2.1 - 2021-10-15
 
-- `STRICT_MODE` constant added. `STRICT_MODE` can be turned off for enum classes by setting this constant to "false"
+- `$strictMode` static property added. `$strictMode` can be turned off for enum classes by setting this property to "false"
 
 ## 1.1.0 - 2021-09-30
 
