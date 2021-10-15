@@ -10,6 +10,8 @@ use MyCLabs\Enum\Enum;
 
 abstract class EnumCast extends Enum implements Castable
 {
+    protected const STRICT_MODE = true;
+
     public static function castUsing(array $arguments)
     {
         return new class implements CastsAttributes {
@@ -45,6 +47,20 @@ abstract class EnumCast extends Enum implements Castable
                 return $value;
             }
         };
+    }
+
+    /**
+     * Return key for value
+     *
+     * @param mixed $value
+     *
+     * @psalm-param mixed $value
+     * @psalm-pure
+     * @return string|false
+     */
+    public static function search($value)
+    {
+        return \array_search($value, static::toArray(), static::STRICT_MODE);
     }
 }
 

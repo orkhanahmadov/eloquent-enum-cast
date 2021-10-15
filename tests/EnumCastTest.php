@@ -41,6 +41,16 @@ class EnumCastTest extends TestCase
         $this->assertSame('value1', DB::table('test_models')->first()->enum);
     }
 
+    public function testSavesRawValueWithStrictModeTurnedOff(): void
+    {
+        $model = new NonStrictTestModel();
+        $model->enum = '1';
+        $model->save();
+
+        $this->assertNotNull($saved = NonStrictTestModel::first());
+        $this->assertSame(1, $saved->enum->getValue());
+    }
+
     public function testThrowsExceptionWhenInvalidRawValueIsPassed(): void
     {
         $this->expectException(UnexpectedValueException::class);
@@ -55,6 +65,7 @@ class EnumCastTest extends TestCase
         parent::setUp();
 
         DB::statement('CREATE TABLE test_models (enum VARCHAR);');
+        DB::statement('CREATE TABLE non_strict_test_models (enum INT);');
     }
 }
 
@@ -68,6 +79,21 @@ class TestModel extends Model
 {
     protected $casts = [
         'enum' => TestEnum::class,
+    ];
+    protected $guarded = [];
+    public $timestamps = false;
+}
+
+class NonStrictTestEnum extends EnumCast
+{
+    protected const STRICT_MODE = false;
+    private const KEY1 = 1;
+}
+
+class NonStrictTestModel extends Model
+{
+    protected $casts = [
+        'enum' => NonStrictTestEnum::class,
     ];
     protected $guarded = [];
     public $timestamps = false;
