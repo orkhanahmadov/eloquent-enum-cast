@@ -6,9 +6,14 @@
 
 Simple Enum cast for Eloquent ORM using [myclabs/php-enum](https://github.com/myclabs/php-enum).
 
+## Important!
+Since the release of PHP 8.1 this package is no longer maintained!
+
+With PHP 8.1 you should use native enums and as of Laravel [v8.71.0](https://github.com/laravel/framework/releases/tag/v8.71.0) Eloquent has official support to cast from and to native backed enums.
+
 ## Requirements
 
-- **PHP 7.3** or higher
+- **PHP ^7.3** or **PHP 8.0**
 - **Laravel 8.0** or higher
 
 ## Installation
