@@ -13,7 +13,7 @@ With PHP 8.1 you should use native enums and as of Laravel [v8.71.0](https://git
 
 ## Requirements
 
-- **PHP ^7.3** or **PHP 8.0**
+- **PHP ^7.3** or **PHP ^8.0**
 - **Laravel 8.0** or higher
 
 ## Installation
